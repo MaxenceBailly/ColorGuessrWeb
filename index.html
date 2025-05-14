@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Color Guesser</title>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <div class="color-box" id="colorBox"></div>
+        <h2>Devine la couleur !</h2>
+        <p>
+            R: <input type="range" id="guessR" min="0" max="255" value="128" oninput="updateSliderValue('R')">
+            <span id="valueR" class="slider-value">128</span><br>
+            G: <input type="range" id="guessG" min="0" max="255" value="128" oninput="updateSliderValue('G')">
+            <span id="valueG" class="slider-value">128</span><br>
+            B: <input type="range" id="guessB" min="0" max="255" value="128" oninput="updateSliderValue('B')">
+            <span id="valueB" class="slider-value">128</span>
+        </p>
+        <button id="validateButton" onclick="checkGuess()">Valider</button>
+        <p id="result"></p>
+        <div id="popup" class="popup"></div>
+        
+        <div class="stats-container">
+            <h2>Statistiques</h2>
+            <p>Nombre de parties: <span id="gamesCount">0</span></p>
+            <p>Score moyen: <span id="averageScore">0.00</span>%</p>
+        </div>
+        
+        <h2>Historique de parties</h2>
+        <div id="history" class="history"></div>
+        <script src="./color.js"></script>
+    </body>
+</html>
